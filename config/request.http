@@ -1,0 +1,17 @@
+### Ingredients Index
+GET http://localhost:3000/ingredients
+
+### Ingredients Create
+POST http://localhost:3000/ingredients/
+Content-Type: application/json
+
+{
+"name": "test",
+"measurement": "shit, shingles"
+}
+
+### Ingredients Destroy
+GET http://localhost:3000/ingredients/
+
+### Ingredients Destroy
+DELETE http://localhost:3000/ingredients/

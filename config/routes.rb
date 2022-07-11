@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  ###Ingredients Routes
+  get "/ingredients" => "ingredients#index"
+  post "/ingredients" => "ingredients#create"
+  delete "/ingredients/:id" => "ingredients#destroy"
 end
