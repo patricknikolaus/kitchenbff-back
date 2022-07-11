@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   get "/recipes/:id" => "recipes#show"
   patch "/recipes/:id" => "recipes#update"
   delete "recipes/:id" => "recipes#destroy"
+  ###Ingredients Routes
+  get "/ingredients" => "ingredients#index"
+  post "/ingredients" => "ingredients#create"
+  delete "/ingredients/:id" => "ingredients#destroy"
 end
