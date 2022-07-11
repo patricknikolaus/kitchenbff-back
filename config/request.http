@@ -1,0 +1,40 @@
+### Recipes Index
+Get http://localhost:3000/recipes
+
+### Recipes Create
+POST http://localhost:3000/recipes/
+Content-Type: application/json
+
+{
+"name": "test",
+"chef": "test chef"
+}
+
+### Recipes Show
+GET http://localhost:3000/recipes/
+
+### Recipes Update
+PATCH http://localhost:3000/recipes/
+
+### Recipes Destroy
+DELETE http://localhost:3000/recipes/
+
+
+
+### Ingredients Index
+GET http://localhost:3000/ingredients
+
+### Ingredients Create
+POST http://localhost:3000/ingredients/
+Content-Type: application/json
+
+{
+"name": "test",
+"measurement": "shit, shingles"
+}
+
+### Ingredients Show
+GET http://localhost:3000/ingredients/
+
+### Ingredients Destroy
+DELETE http://localhost:3000/ingredients/
