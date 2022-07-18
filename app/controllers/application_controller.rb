@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
-  auth_headers = request.headers["Authorization"]
+  def current_user
+    auth_headers = request.headers["Authorization"]
     if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
       token = auth_headers[/(?<=\A(Bearer ))\S+\z/]
       begin
