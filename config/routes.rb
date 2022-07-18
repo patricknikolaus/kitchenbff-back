@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   post "/ingredients" => "ingredients#create"
   get "/ingredients/:id" => "ingredients#show"
   delete "/ingredients/:id" => "ingredients#destroy"
+  ###Users Routes
+  post "/users" => "users#create"
+  ###Sessions Routes
+  post "/sessions" => "sessions#create"
 end
