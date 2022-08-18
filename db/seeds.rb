@@ -1,24 +1,32 @@
-# 3.times do
-#   user_name = Faker::Color.color_name + Faker::Creature::Animal.name
-#   user_email = Faker::Internet.email
-#   User.create(username: "#{user_name}", email: "#{user_email}")
-# end
+5.times do
+  username = "#{Faker::Color.color_name}#{Faker::Creature::Animal.name}"
+  email = "#{username}@test.com"
+  user = User.create!(username: username, email: email, password: "password")
+  user.save
+end
 
-# 10.times do
-#   recipe_user_id = rand(1..3)
-#   recipe_name = Faker::Food.dish
-#   recipe_chef = Faker::Name.name
-#   p recipe_chef
-#   p recipe_user_id
-#   p recipe_name
-#   Recipe.create(user_id: recipe_user_id, name: "#{recipe_name}", chef: "#{recipe_chef}")
-# end
+25.times do
+  title = Faker::Food.dish
+  description = Faker::Food.description
+  user_id = rand(1..5)
+  times = [5, 10, 15, 20, 25, 30]
+  random_time1 = rand(5)
+  random_time2 = rand(5)
+  cook_time = times[random_time1]
+  prep_time = times[random_time2]
+  recipe = Recipe.create!(title: title, description: description, user_id: user_id, cook_time: cook_time, prep_time: prep_time)
+  recipe.save
+end
 
-# 25.times do
-#   food = Faker::Food.ingredient
-#   num = rand(1..3)
-#   i = rand(0..2)
-#   r_id = rand(3..12)
-#   measure = ["Tbsp", "tsp", "cup", "oz", "g"]
-#   Ingredient.create(name: "#{food}", measurement: "#{num} #{measure[i]}", recipe_id: r_id)
-# end
+100.times do
+  measurement = rand(1..10)
+  units = ["cup", "teaspoon", "tablespoon"]
+  random_unit = rand(3)
+  unit = units[random_unit]
+  names = [Faker::Food.fruits, Faker::Food.spice, Faker::Food.vegetables, Faker::Food.ingredient]
+  random_name = rand(4)
+  name = names[random_name]
+  recipe_id = rand(1..25)
+  ingredient = Ingredient.create!(name: name, measurement: measurement, unit: unit, recipe_id: recipe_id)
+  ingredient.save
+end
